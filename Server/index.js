@@ -40,4 +40,6 @@ app.listen(port, () => {
     Query -> Query parameters -> whuch tells the server  -> alter the response 
     get, post, put, delete -> method 
     Secure database 
+    REST API -> Representational State Transfer API
+    create, read, update, delete -> crud
 */
