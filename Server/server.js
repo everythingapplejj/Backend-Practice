@@ -1,26 +1,24 @@
 const express = require('express');
+const path = require('path');
 const app = express();
-const port = 8000
+const port = 8080;
 
-// Serve Static Files (Optional)
-const path = require('path')
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, '../client/build'))); // okay dang this works!
 
-app.use(express.static(path.join(_dirname, 'Client/build')))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(_dirname + 'client/build/index.html'))
-})
-// this is to serve your built frontend from the backend, use express serve static files 
-
-// Middleware 
-app.use(express.json())
-
+// Handle API routes
 app.get('/api/message', (req, res) => {
-    res.status(200).send({message: "Hello from the backend!"});
-})
+    res.status(200).send({ message: 'Hello from the backend!' });
+});
+
+// Handle React routing, return all requests to React app
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 app.listen(port, () => {
-    console.log(`Server is currently running on http://localhost:${port}`);
-})
+    console.log(`Server is running on http://localhost:${port}`);
+});
 /*
     URL -> http:// -> protocal non-encrypted 
     URL -> https:// -> protocal encrypted
