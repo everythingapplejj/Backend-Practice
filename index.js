@@ -29,3 +29,15 @@ app.post('/tshirt/:id', (req, res) => {
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
+
+/*
+    URL -> http:// -> protocal non-encrypted 
+    URL -> https:// -> protocal encrypted
+
+    HTTP -> Hypertext Transfer Protocol
+    HOST -> tell the internet (server)
+    path -> what the client wants like different routes
+    Query -> Query parameters -> whuch tells the server  -> alter the response 
+    get, post, put, delete -> method 
+    Secure database 
+*/
