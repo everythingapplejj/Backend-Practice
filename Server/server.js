@@ -5,7 +5,7 @@ const port = 8080;
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, '../client/build'))); // okay dang this works!
-
+// this is the code to connect the frontend to the backend.
 // Handle API routes
 app.get('/api/message', (req, res) => {
     res.status(200).send({ message: 'Hello from the backend!' });
