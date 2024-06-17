@@ -22,7 +22,7 @@ app.post('/tshirt/:id', (req, res) => {
     }
     res.send({
         tshirt: `��� with your ${logo} and ID of ${id}`,
-    });
+    }); // another example of rest api
 });
 
 // Start the server and listen on the specified port
